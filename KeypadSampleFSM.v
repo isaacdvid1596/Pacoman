@@ -69,6 +69,13 @@ module KeypadSampleFSM(
         6'd40: vga_we = 1'd0;
         6'd41: vga_we = 1'd0;
 
+        6'd42: vga_we = 1'd0;
+        6'd43: vga_we = 1'd0;
+        6'd44: vga_we = 1'd1;
+        6'd45: vga_we = 1'd0;
+        6'd46: vga_we = 1'd0;
+        6'd47: vga_we = 1'd1;
+
         
 
 
@@ -207,6 +214,24 @@ module KeypadSampleFSM(
         6'd41:
         vga_data =  16'hx;
 
+        6'd42:
+        vga_data =  16'h0001;
+
+        6'd43:
+        vga_data =  16'h0001;
+
+        6'd44:
+        vga_data =  16'h0001;
+
+        6'd45:
+        vga_data =  16'h0002;
+
+        6'd46:
+        vga_data =  16'h0002;
+
+        6'd47:
+        vga_data =  16'h0002;
+
         
         default:begin
         vga_data  = 16'hx;
@@ -235,7 +260,7 @@ module KeypadSampleFSM(
             if(keypad[0])
             ns = 6'd6;
             else if(keypad[1])
-            ns = 6'd7;
+            ns = 6'd42;
             else if(keypad[2])
             ns = 6'd8;
             else if(keypad[3])
@@ -259,6 +284,12 @@ module KeypadSampleFSM(
 
 
         //derecha
+        6'd42:  ns = 6'd43;
+        6'd43:  ns = 6'd44;
+        6'd44:  ns = 6'd45;
+        6'd45:  ns = 6'd46;
+        6'd46:  ns = 6'd47;
+        6'd47:  ns = 6'd7;
         6'd7:  ns = (col<78)? 6'd10 : 6'd15;
         //true
         6'd10: ns = 6'd11;
@@ -331,7 +362,9 @@ module KeypadSampleFSM(
             6'd33: col <= 7'd78;
             6'd36: col <= col + 7'd1;
             6'd40: col <= col + 7'd1;
-            6'd41: col <= 7'd0;
+            6'd41: col <= 7'd1;
+            6'd42: col <= col - 7'd1;
+            6'd45: col <= col + 7'd1;
             default:
                 col <= col;
         endcase
@@ -397,6 +430,12 @@ module KeypadSampleFSM(
             vga_addr_reg <= row * 7'd80 + col;
 
         if (cs == 6'd37)
+            vga_addr_reg <= row * 7'd80 + col;
+
+        if (cs == 6'd43)
+            vga_addr_reg <= row * 7'd80 + col;
+
+        if (cs == 6'd46 )
             vga_addr_reg <= row * 7'd80 + col;
     
     end
