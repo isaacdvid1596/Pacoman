@@ -28,7 +28,7 @@ module KeypadSampleFSM(
         6'd3:  vga_we = 1'd0;
         6'd4:  vga_we = 1'd1;
         6'd5:  vga_we = 1'd0;
-        6'd6:  vga_we = 1'd0;
+        6'd6:  vga_we = 1'd1;
         6'd7:  vga_we = 1'd0;
         6'd8:  vga_we = 1'd1;
         6'd9:  vga_we = 1'd1;
@@ -75,6 +75,20 @@ module KeypadSampleFSM(
         6'd45: vga_we = 1'd0;
         6'd46: vga_we = 1'd0;
         6'd47: vga_we = 1'd1;
+
+        // 6'd42: vga_we = 1'd0;
+        // 6'd43: vga_we = 1'd0;
+        // 6'd44: vga_we = 1'd1;
+        // 6'd45: vga_we = 1'd0;
+        // 6'd46: vga_we = 1'd0;
+        // 6'd47: vga_we = 1'd1;
+
+        6'd48: vga_we = 1'd0;
+        6'd49: vga_we = 1'd0;
+        6'd50: vga_we = 1'd1;
+        6'd51: vga_we = 1'd0;
+        6'd52: vga_we = 1'd0;
+        6'd53: vga_we = 1'd1;
 
         
 
@@ -232,6 +246,26 @@ module KeypadSampleFSM(
         6'd47:
         vga_data =  16'h0002;
 
+
+
+        6'd48:
+        vga_data =  16'h0003;
+
+        6'd49:
+        vga_data =  16'h0003;
+
+        6'd50:
+        vga_data =  16'h0003;
+
+        6'd51:
+        vga_data =  16'h0004;
+
+        6'd52:
+        vga_data =  16'h0004;
+
+        6'd53:
+        vga_data =  16'h0004;
+
         
         default:begin
         vga_data  = 16'hx;
@@ -258,7 +292,7 @@ module KeypadSampleFSM(
         6'd5: 
         begin
             if(keypad[0])
-            ns = 6'd6;
+            ns = 6'd48;
             else if(keypad[1])
             ns = 6'd42;
             else if(keypad[2])
@@ -270,6 +304,12 @@ module KeypadSampleFSM(
         end
 
         //izquierda
+        6'd48:  ns = 6'd49;
+        6'd49:  ns = 6'd50;
+        6'd50:  ns = 6'd51;
+        6'd51:  ns = 6'd52;
+        6'd52:  ns = 6'd53;
+        6'd53:  ns = 6'd6;
         6'd6: ns = (col > 2)? 6'd18 : 6'd23;
         //true
         6'd18: ns = 6'd19;
@@ -365,6 +405,8 @@ module KeypadSampleFSM(
             6'd41: col <= 7'd1;
             6'd42: col <= col - 7'd1;
             6'd45: col <= col + 7'd1;
+            6'd48: col <= col + 7'd1;
+            6'd51: col <= col - 7'd1;
             default:
                 col <= col;
         endcase
@@ -437,10 +479,26 @@ module KeypadSampleFSM(
 
         if (cs == 6'd46 )
             vga_addr_reg <= row * 7'd80 + col;
+
+        if (cs == 6'd49)
+            vga_addr_reg <= row * 7'd80 + col;
+
+        if (cs == 6'd52)
+            vga_addr_reg <= row * 7'd80 + col;
     
     end
 
 
+    // //generate maze
+
+    // always @ (*) begin
+
+    
+
+
+
+
+    // end
     
 
 
