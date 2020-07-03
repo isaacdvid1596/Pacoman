@@ -76,19 +76,20 @@ module KeypadSampleFSM(
         6'd46: vga_we = 1'd0;
         6'd47: vga_we = 1'd1;
 
-        // 6'd42: vga_we = 1'd0;
-        // 6'd43: vga_we = 1'd0;
-        // 6'd44: vga_we = 1'd1;
-        // 6'd45: vga_we = 1'd0;
-        // 6'd46: vga_we = 1'd0;
-        // 6'd47: vga_we = 1'd1;
-
+     
         6'd48: vga_we = 1'd0;
         6'd49: vga_we = 1'd0;
         6'd50: vga_we = 1'd1;
         6'd51: vga_we = 1'd0;
         6'd52: vga_we = 1'd0;
         6'd53: vga_we = 1'd1;
+
+        6'd54: vga_we = 1'd0;
+        6'd55: vga_we = 1'd1;
+        6'd56: vga_we = 1'd0;
+        6'd57: vga_we = 1'd1;
+
+    
 
         
 
@@ -181,7 +182,7 @@ module KeypadSampleFSM(
         vga_data =  16'hx;
 
         6'd26:
-        vga_data =  16'h0e07;
+        vga_data =  16'h0007;
 
         6'd27:
         vga_data =  16'h0e08;
@@ -266,6 +267,18 @@ module KeypadSampleFSM(
         6'd53:
         vga_data =  16'h0004;
 
+        6'd54:
+        vga_data =  16'h0004;
+
+        6'd55:
+        vga_data =  16'h0004;
+
+        6'd56:
+        vga_data =  16'h0004;
+
+        6'd57:
+        vga_data =  16'h0004;
+
         
         default:begin
         vga_data  = 16'hx;
@@ -296,7 +309,7 @@ module KeypadSampleFSM(
             else if(keypad[1])
             ns = 6'd42;
             else if(keypad[2])
-            ns = 6'd8;
+            ns = 6'd54;
             else if(keypad[3])
             ns = 6'd9;
             else 
@@ -345,6 +358,10 @@ module KeypadSampleFSM(
 
 
         //abajo
+        6'd54: ns = 6'd55;
+        6'd55: ns = 6'd56;
+        6'd56: ns = 6'd57;      
+        6'd57: ns = 6'd8;      
         6'd8:  ns = (row<28)? 6'd26 : 6'd31;
         //true
         6'd26: ns = 6'd27;
@@ -484,6 +501,12 @@ module KeypadSampleFSM(
             vga_addr_reg <= row * 7'd80 + col;
 
         if (cs == 6'd52)
+            vga_addr_reg <= row * 7'd80 + col;
+
+        if (cs == 6'd54)
+            vga_addr_reg <= row * 7'd80 + col-1;
+
+        if (cs == 6'd56)
             vga_addr_reg <= row * 7'd80 + col;
     
     end
