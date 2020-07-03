@@ -89,6 +89,11 @@ module KeypadSampleFSM(
         6'd56: vga_we = 1'd0;
         6'd57: vga_we = 1'd1;
 
+        6'd58: vga_we = 1'd0;
+        6'd59: vga_we = 1'd1;
+        6'd60: vga_we = 1'd0;
+        6'd61: vga_we = 1'd1;
+
     
 
         
@@ -206,7 +211,7 @@ module KeypadSampleFSM(
         vga_data =  16'hx;
 
         6'd34:
-        vga_data =  16'h0e06;
+        vga_data =  16'h0006;
 
         6'd35:
         vga_data =  16'h0e05;
@@ -279,6 +284,18 @@ module KeypadSampleFSM(
         6'd57:
         vga_data =  16'h0004;
 
+        6'd58:
+        vga_data =  16'h0006;
+
+        6'd59:
+        vga_data =  16'h0006;
+
+        6'd60:
+        vga_data =  16'h0005;
+
+        6'd61:
+        vga_data =  16'h0005;
+
         
         default:begin
         vga_data  = 16'hx;
@@ -311,8 +328,8 @@ module KeypadSampleFSM(
             else if(keypad[2])
             ns = 6'd54;
             else if(keypad[3])
-            ns = 6'd9;
-            else 
+            ns = 6'd58;
+            else
             ns = 6'd5;
         end
 
@@ -375,6 +392,10 @@ module KeypadSampleFSM(
         6'd33: ns = 6'd26;
 
         //arriba
+        6'd58: ns = 6'd59;
+        6'd59: ns = 6'd60;
+        6'd60: ns = 6'd61;      
+        6'd61: ns = 6'd9;   
         6'd9:  ns = (row>2)? 6'd34 : 6'd39;
         //true
         6'd34: ns = 6'd35;
@@ -507,6 +528,12 @@ module KeypadSampleFSM(
             vga_addr_reg <= row * 7'd80 + col-1;
 
         if (cs == 6'd56)
+            vga_addr_reg <= row * 7'd80 + col;
+
+        if (cs == 6'd58)
+            vga_addr_reg <= row * 7'd80 + col+1;
+
+        if (cs == 6'd60)
             vga_addr_reg <= row * 7'd80 + col;
     
     end
