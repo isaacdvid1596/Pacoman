@@ -1,0 +1,537 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!--Created with JFLAP 7.1.--><structure>
+	<type>fa</type>
+	<automaton>
+		<!--The list of states.-->
+		<state id="0" name="q0">
+			<x>42.0</x>
+			<y>629.0</y>
+			<label>ncol=10/nrow=10</label>
+		</state>
+		<state id="1" name="q1">
+			<x>170.0</x>
+			<y>606.0</y>
+			<label>nvgaddr=row*80+col</label>
+		</state>
+		<state id="2" name="q2">
+			<x>250.0</x>
+			<y>497.0</y>
+			<label>vgwe=1/nvgadata=0x0e01/ncol=col+1</label>
+		</state>
+		<state id="3" name="q3">
+			<x>360.0</x>
+			<y>383.0</y>
+			<label>vgwe=0/nvgdata=0x0e02/nvga=row*80+col</label>
+		</state>
+		<state id="4" name="q4">
+			<x>488.0</x>
+			<y>511.0</y>
+			<label>nvgwe=1/nvgadata=0x0e02</label>
+		</state>
+		<state id="5" name="q5">
+			<x>691.0</x>
+			<y>624.0</y>
+		</state>
+		<state id="6" name="q6">
+			<x>694.0</x>
+			<y>408.0</y>
+		</state>
+		<state id="7" name="q10">
+			<x>980.0</x>
+			<y>429.0</y>
+			<label>ncol=col+1</label>
+		</state>
+		<state id="8" name="q34">
+			<x>371.0</x>
+			<y>733.0</y>
+			<label>nrow = row-1/vgawe=1/nvgadata=0e05</label>
+		</state>
+		<state id="9" name="q9">
+			<x>483.0</x>
+			<y>701.0</y>
+		</state>
+		<state id="10" name="q11">
+			<x>1174.0</x>
+			<y>459.0</y>
+			<label>vgawe=0/nvgaaddr=row*80+col/nvgadata=0x0e01</label>
+		</state>
+		<state id="11" name="q12">
+			<x>1293.0</x>
+			<y>364.0</y>
+			<label>vgawe=1/nvgadata=0x0e01/ncol=col+1</label>
+		</state>
+		<state id="12" name="q13">
+			<x>1452.0</x>
+			<y>428.0</y>
+			<label>vgawe=0/nvgadata=0x0e02/nvgaddr=row*80+col</label>
+		</state>
+		<state id="13" name="q14">
+			<x>1533.0</x>
+			<y>494.0</y>
+			<label>vgawe=1/nvgadata=0x0e02</label>
+		</state>
+		<state id="14" name="q7">
+			<x>860.0</x>
+			<y>558.0</y>
+		</state>
+		<state id="15" name="q15">
+			<x>954.0</x>
+			<y>701.0</y>
+			<label>ncol = 0</label>
+		</state>
+		<state id="16" name="q16">
+			<x>1162.0</x>
+			<y>586.0</y>
+			<label>nrow = row+1</label>
+		</state>
+		<state id="17" name="q17">
+			<x>1148.0</x>
+			<y>715.0</y>
+			<label>nrow = 0</label>
+		</state>
+		<state id="18" name="q8">
+			<x>685.0</x>
+			<y>822.0</y>
+		</state>
+		<state id="19" name="q23">
+			<x>859.0</x>
+			<y>369.0</y>
+			<label>ncol = 78</label>
+		</state>
+		<state id="20" name="q18">
+			<x>761.0</x>
+			<y>181.0</y>
+			<label>ncol=col-1</label>
+		</state>
+		<state id="21" name="q19">
+			<x>954.0</x>
+			<y>119.0</y>
+			<label>vgawe=0/nvgaddr=row*80+col/nvgadata=0x0e04</label>
+		</state>
+		<state id="22" name="q20">
+			<x>1141.0</x>
+			<y>81.0</y>
+			<label>vgawe=1/nvgadata=0x0e04/ncol=col-1</label>
+		</state>
+		<state id="23" name="q21">
+			<x>1294.0</x>
+			<y>181.0</y>
+			<label>vgawe=0/nvgadata=0x0e03/nvgaddr=row*80+col</label>
+		</state>
+		<state id="24" name="q22">
+			<x>1158.0</x>
+			<y>273.0</y>
+			<label>vgawe=1/nvgadata=0x0e03</label>
+		</state>
+		<state id="25" name="q24">
+			<x>983.0</x>
+			<y>226.0</y>
+			<label>nrow = row+1</label>
+		</state>
+		<state id="26" name="q25">
+			<x>1003.0</x>
+			<y>327.0</y>
+			<label>nrow=0</label>
+		</state>
+		<state id="27" name="q26">
+			<x>935.0</x>
+			<y>799.0</y>
+			<label>nrow = row+1 / vgawe=1/ nvgadata=0x0e07</label>
+		</state>
+		<state id="28" name="q27">
+			<x>1219.0</x>
+			<y>765.0</y>
+			<label>vgawe=0/nvgaddr=row*80+col/vgadata=0e08</label>
+		</state>
+		<state id="29" name="q28">
+			<x>1369.0</x>
+			<y>656.0</y>
+			<label>vgawe=1/nvgadata=0x0e08</label>
+		</state>
+		<state id="30" name="q29">
+			<x>1663.0</x>
+			<y>694.0</y>
+			<label>vgawe=0/nvgadata=0x0e07/nvgaddr=row*80+col-1</label>
+		</state>
+		<state id="31" name="q30">
+			<x>1405.0</x>
+			<y>911.0</y>
+			<label>vgawe=1/nvgadata=0x0e07</label>
+		</state>
+		<state id="32" name="q31">
+			<x>884.0</x>
+			<y>951.0</y>
+			<label>nrow=0</label>
+		</state>
+		<state id="33" name="q32">
+			<x>1251.0</x>
+			<y>903.0</y>
+			<label>ncol = col - 1</label>
+		</state>
+		<state id="34" name="q33">
+			<x>1167.0</x>
+			<y>983.0</y>
+			<label>ncol = 78</label>
+		</state>
+		<state id="35" name="q35">
+			<x>338.0</x>
+			<y>828.0</y>
+			<label>vgawe=0/nvgaddr=row*80+col/vgadata=0e05</label>
+		</state>
+		<state id="36" name="q36">
+			<x>142.0</x>
+			<y>695.0</y>
+			<label>vgawe=1/nvgadata=0e05</label>
+		</state>
+		<state id="37" name="q37">
+			<x>163.0</x>
+			<y>903.0</y>
+			<label>vgawe=0/nvgaddr=row*80+col+1/nvgadata=0x0e06</label>
+		</state>
+		<state id="38" name="q38">
+			<x>179.0</x>
+			<y>1030.0</y>
+			<label>vgawe=1/nvgadata=0e06</label>
+		</state>
+		<state id="39" name="q39">
+			<x>546.0</x>
+			<y>845.0</y>
+			<label>nrow = 28</label>
+		</state>
+		<state id="40" name="q40">
+			<x>543.0</x>
+			<y>1036.0</y>
+			<label>ncol =col+1</label>
+		</state>
+		<state id="41" name="q41">
+			<x>401.0</x>
+			<y>967.0</y>
+			<label>ncol= 0</label>
+		</state>
+		<state id="42" name="q42">
+			<x>1721.0</x>
+			<y>333.0</y>
+			<label>ncol = col-1 / vgadata=0x0001/vgawe=0</label>
+		</state>
+		<state id="43" name="q43">
+			<x>1910.0</x>
+			<y>267.0</y>
+			<label>nvgaddr=row*80+col/vgadata=0001/vgawe=0</label>
+		</state>
+		<state id="44" name="q44">
+			<x>1943.0</x>
+			<y>385.0</y>
+			<label>vgawe=1/vgadata=0001</label>
+		</state>
+		<state id="45" name="q45">
+			<x>1943.0</x>
+			<y>490.0</y>
+			<label>ncol=col+1</label>
+		</state>
+		<state id="46" name="q46">
+			<x>1956.0</x>
+			<y>592.0</y>
+			<label>nvgadrr=row*80+col/vgwe=0/vgadata=0002</label>
+		</state>
+		<state id="47" name="q47">
+			<x>1975.0</x>
+			<y>694.0</y>
+			<label>vgawe=1 vgadata=0e02</label>
+		</state>
+		<!--The list of transitions.-->
+		<transition>
+			<from>10</from>
+			<to>11</to>
+			<read/>
+		</transition>
+		<transition>
+			<from>37</from>
+			<to>38</to>
+			<read/>
+		</transition>
+		<transition>
+			<from>34</from>
+			<to>27</to>
+			<read/>
+		</transition>
+		<transition>
+			<from>15</from>
+			<to>16</to>
+			<read>row&lt;28</read>
+		</transition>
+		<transition>
+			<from>42</from>
+			<to>43</to>
+			<read/>
+		</transition>
+		<transition>
+			<from>41</from>
+			<to>8</to>
+			<read/>
+		</transition>
+		<transition>
+			<from>5</from>
+			<to>9</to>
+			<read>keypad[3]==1</read>
+		</transition>
+		<transition>
+			<from>15</from>
+			<to>17</to>
+			<read>!(row&lt;28)</read>
+		</transition>
+		<transition>
+			<from>20</from>
+			<to>21</to>
+			<read/>
+		</transition>
+		<transition>
+			<from>28</from>
+			<to>29</to>
+			<read/>
+		</transition>
+		<transition>
+			<from>13</from>
+			<to>5</to>
+			<read/>
+		</transition>
+		<transition>
+			<from>7</from>
+			<to>10</to>
+			<read/>
+		</transition>
+		<transition>
+			<from>12</from>
+			<to>13</to>
+			<read/>
+		</transition>
+		<transition>
+			<from>4</from>
+			<to>5</to>
+			<read/>
+		</transition>
+		<transition>
+			<from>18</from>
+			<to>32</to>
+			<read>!(row&lt;28)</read>
+		</transition>
+		<transition>
+			<from>17</from>
+			<to>7</to>
+			<read/>
+		</transition>
+		<transition>
+			<from>32</from>
+			<to>34</to>
+			<read>!(col&gt;2)</read>
+		</transition>
+		<transition>
+			<from>40</from>
+			<to>8</to>
+			<read/>
+		</transition>
+		<transition>
+			<from>14</from>
+			<to>7</to>
+			<read>col&lt;78</read>
+		</transition>
+		<transition>
+			<from>14</from>
+			<to>15</to>
+			<read>!(col&lt;78)</read>
+		</transition>
+		<transition>
+			<from>39</from>
+			<to>41</to>
+			<read>!(col&lt;78)</read>
+		</transition>
+		<transition>
+			<from>0</from>
+			<to>1</to>
+			<read/>
+		</transition>
+		<transition>
+			<from>38</from>
+			<to>5</to>
+			<read/>
+		</transition>
+		<transition>
+			<from>16</from>
+			<to>7</to>
+			<read/>
+		</transition>
+		<transition>
+			<from>6</from>
+			<to>20</to>
+			<read>col&gt;2</read>
+		</transition>
+		<transition>
+			<from>24</from>
+			<to>5</to>
+			<read/>
+		</transition>
+		<transition>
+			<from>45</from>
+			<to>46</to>
+			<read/>
+		</transition>
+		<transition>
+			<from>22</from>
+			<to>23</to>
+			<read/>
+		</transition>
+		<transition>
+			<from>3</from>
+			<to>4</to>
+			<read/>
+		</transition>
+		<transition>
+			<from>8</from>
+			<to>35</to>
+			<read/>
+		</transition>
+		<transition>
+			<from>32</from>
+			<to>33</to>
+			<read>col &gt; 2</read>
+		</transition>
+		<transition>
+			<from>30</from>
+			<to>31</to>
+			<read/>
+		</transition>
+		<transition>
+			<from>36</from>
+			<to>37</to>
+			<read/>
+		</transition>
+		<transition>
+			<from>23</from>
+			<to>24</to>
+			<read/>
+		</transition>
+		<transition>
+			<from>27</from>
+			<to>28</to>
+			<read/>
+		</transition>
+		<transition>
+			<from>5</from>
+			<to>18</to>
+			<read>keypad[2]==1</read>
+		</transition>
+		<transition>
+			<from>33</from>
+			<to>27</to>
+			<read/>
+		</transition>
+		<transition>
+			<from>1</from>
+			<to>2</to>
+			<read/>
+		</transition>
+		<transition>
+			<from>43</from>
+			<to>44</to>
+			<read/>
+		</transition>
+		<transition>
+			<from>5</from>
+			<to>5</to>
+			<read>keypad==0</read>
+		</transition>
+		<transition>
+			<from>35</from>
+			<to>36</to>
+			<read/>
+		</transition>
+		<transition>
+			<from>39</from>
+			<to>40</to>
+			<read>col &lt; 78</read>
+		</transition>
+		<transition>
+			<from>44</from>
+			<to>45</to>
+			<read/>
+		</transition>
+		<transition>
+			<from>29</from>
+			<to>30</to>
+			<read/>
+		</transition>
+		<transition>
+			<from>26</from>
+			<to>20</to>
+			<read/>
+		</transition>
+		<transition>
+			<from>19</from>
+			<to>25</to>
+			<read>row &lt; 28</read>
+		</transition>
+		<transition>
+			<from>25</from>
+			<to>20</to>
+			<read/>
+		</transition>
+		<transition>
+			<from>18</from>
+			<to>27</to>
+			<read>row &lt; 28</read>
+		</transition>
+		<transition>
+			<from>11</from>
+			<to>12</to>
+			<read/>
+		</transition>
+		<transition>
+			<from>5</from>
+			<to>6</to>
+			<read>keypad[0]==1</read>
+		</transition>
+		<transition>
+			<from>6</from>
+			<to>19</to>
+			<read>!(col&gt;2)</read>
+		</transition>
+		<transition>
+			<from>31</from>
+			<to>5</to>
+			<read/>
+		</transition>
+		<transition>
+			<from>5</from>
+			<to>14</to>
+			<read>keypad[1]==1</read>
+		</transition>
+		<transition>
+			<from>2</from>
+			<to>3</to>
+			<read/>
+		</transition>
+		<transition>
+			<from>9</from>
+			<to>39</to>
+			<read>!(row&gt;2)</read>
+		</transition>
+		<transition>
+			<from>9</from>
+			<to>8</to>
+			<read>row &gt; 2</read>
+		</transition>
+		<transition>
+			<from>19</from>
+			<to>26</to>
+			<read>!(row&lt;28)</read>
+		</transition>
+		<transition>
+			<from>21</from>
+			<to>22</to>
+			<read/>
+		</transition>
+		<transition>
+			<from>46</from>
+			<to>47</to>
+			<read/>
+		</transition>
+	</automaton>
+</structure>
